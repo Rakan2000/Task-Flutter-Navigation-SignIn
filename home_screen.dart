@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:navigation_sign/views/signed_in.dart';
 
-//import 'package:navigation_sign/models/signed_in.dart';
-String userName = "R";
-String passWord = "1122";
+String userName = "Rakan";
+String passWord = "1234";
+
+final NametextController = TextEditingController();
+final PasswordtextController = TextEditingController();
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
-  final NametextController = TextEditingController();
-  final PasswordtextController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     void goCorrectUser() {
-      if (NametextController == userName &&
-          PasswordtextController == passWord) {
-        GoRouter.of(context).go("/signed_in");
+      if (NametextController.text == userName &&
+          PasswordtextController.text == passWord) {
+        GoRouter.of(context).push("/signed_in", extra: NametextController);
       } else {}
     }
 
