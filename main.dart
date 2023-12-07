@@ -17,7 +17,7 @@ final GoRouter _router = GoRouter(routes: <RouteBase>[
   GoRoute(
     path: '/welocome',
     builder: (BuildContext context, GoRouterState state) {
-      return HomeScreen();
+      return SignedIn();
     },
   ),
 ]);
